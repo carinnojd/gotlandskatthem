@@ -12,13 +12,19 @@
       ],
       "main": true
     },
+    
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "slick.js": {
+      "files": [
+        "scripts/slick.js"
+      ]
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
       ]
-    },
-    "jquery.js": {
-      "bower": ["jquery"]
     }
   },
   "config": {

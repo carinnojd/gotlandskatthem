@@ -21,10 +21,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
     'primary_navigation' => __('Primary Navigation', 'sage'),
-    'footer' => __('Footer Meny'),
-    'footer' => __('Secondary Footer Meny'),
-    'footer' => __('Third Footer Meny'),
-    'footer' => __('Fourth Footer Meny')
+    'footer' => __('Footer Meny')
   ]);
 
   register_nav_menu ('primary-mobile', __( 'Navigation Mobile' ));
@@ -101,7 +98,11 @@ function assets() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-
+  
+  
+  wp_enqueue_script('jquery/js', Assets\asset_path('scripts/jquery.js'), array('jquery'), null, true );
+  wp_enqueue_script('slick/js', Assets\asset_path('scripts/slick.js'), ['jquery'], null, true);
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_enqueue_script('custom/js', Assets\asset_path('scripts/customizer.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

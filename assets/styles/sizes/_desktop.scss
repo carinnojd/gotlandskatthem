@@ -14,12 +14,20 @@
 			a:focus {
 				color: $black;
 			}
+	.nav {
+		li {
+			a {
+
+			}
+		}
+	}
 	.navbar-nav {
 		background-color: transparentize(white, 0.5);
 		li {
 			border-top: none;
 			a, a:focus, a:hover, a:active {
 				color: $black;
+				padding: 1.4em 0.7em;
 			}
 			a:hover {
 				background-color: $brand-primary;
@@ -39,8 +47,12 @@
 			}
 		}
 		.dropdown-menu {
+			a, a:focus, a:hover, a:active {
+				padding: 0.4em;
+			}
 			a:focus, a:hover, a:active {
 				background-color: transparentize(white, 0.5);
+
 			}
 		}
 	}

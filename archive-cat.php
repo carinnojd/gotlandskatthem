@@ -1,3 +1,5 @@
+
+
 <?php
 
 if (!have_posts()) : ?>
@@ -8,8 +10,16 @@ if (!have_posts()) : ?>
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <div class=""><?php the_post_thumbnail('small-thumbnail'); ?></div>
-    <?php the_title( '<h3 class="page-title">', '</h3>' ); ?>
+  <a href="<?php the_permalink(); ?>"><div class=""><?php the_post_thumbnail('small-thumbnail'); ?></div></a>
+   <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+
+
 <?php endwhile; ?>
 
 <?php the_posts_navigation(); ?>
+
+
+
+
+

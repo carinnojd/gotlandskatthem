@@ -1,6 +1,6 @@
 <?php
 
-/* cat page */
+/* cats page */
 function post_type_cat_init(){
 	$labels = array(
         'name'                  => "Katter",
@@ -150,8 +150,12 @@ function cat_save_gender_data($post_id) {
     // Sanitize user input.
     $gender_data = ( isset( $_POST['cat_gender'] ) ? sanitize_html_class( $_POST['cat_gender'] ) : '' );
 
-
     update_post_meta($post_id, '_gender_value_key', $gender_data);
 }
 
 add_action('save_post', 'cat_save_gender_data');
+
+
+
+
+
