@@ -21,5 +21,12 @@ if (!have_posts()) : ?>
 
 
 
+<?php while (have_posts()) : the_post(); ?>
+	<a href="<?php the_permalink(); ?>"><div class=""><?php the_post_thumbnail('small-thumbnail'); ?></div></a>
+  <?php get_template_part('templates/content', get_post_type() != 'cat' ? get_post_type() : get_post_format()); ?>
+
+
+<?php endwhile; ?>
+
 
 

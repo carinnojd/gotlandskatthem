@@ -13,20 +13,20 @@
 } else {
 	echo 'annat';
 	}?>
-
-<div class="slider FullWidth">
-
+<!-- site-content -->
+<div class="row">
+	<div class="col-xs-12 slider">
+		
 	<?php 
-$fields = get_fields();
+	$fields = get_fields();
 
-	if( isset($fields) ) {
-		foreach( $fields as $field_name => $value ) {
-			 ?>
-			
-				<?php if(preg_match('/^slide/', $field_name)) {
+		if( isset($fields) ) {
+			foreach( $fields as $field_name => $value ) {
+				
+				if(preg_match('/^slide/', $field_name)) {
 
 					// large image
-					$size = 'large';
+					$size = 'slider-image';
 					$thumb = $value['sizes'][ $size ];
 					$width = $value['sizes'][ $size . '-width' ];
 					$height = $value['sizes'][ $size . '-height' ];
@@ -42,26 +42,15 @@ $fields = get_fields();
 				}
 				if(preg_match('/^text_till/', $field_name)) {
 					echo'<h2>' . $value . '</h2>'; // You can access $value or create a new array based off these values
-				} ?>
-			
-			
-				
-		<?php
-		}
-	}
-?>
+				} 	
+			}
+		} ?>
+	</div>
 </div>
 <?php endwhile; ?>
 	
-
-
-
+<div class="row">
 	
-
-
-	<!-- site-content -->
-	<div class="site-content clearfix">
-		
 	<?php
 	$args = array( 
         
@@ -83,7 +72,7 @@ $fields = get_fields();
 			<?php while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>
 				<?php if ( has_post_format( 'image' )) { ?>  
                 	
-					<div class="thumbnail">
+					<div class="thumbnail col-xs-12 col-sm-4">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 						<h3 class=""><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<div class="entry-summary">
@@ -96,7 +85,8 @@ $fields = get_fields();
 		endif; 
 		// Reset Post Data
 		wp_reset_postdata(); ?>
-	</div><!-- /site-content -->
+		
+</div>
 
  
 

@@ -10,8 +10,22 @@ $(document).ready(function(){
     adaptiveHeight: true,
     autoplay: true,
   	autoplaySpeed: 10000,
-  	mobileFirst: true,
-  	variableWidth: true
+  	mobileFirst: false,
+  	variableWidth: false,
+  	responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                      mobileFirst: true,
+                      infinite: true,
+                      slidesToShow: 1,
+                      centerMode: false,
+                      
+                      focusOnSelect: true
+
+                  }
+                }
+              ]
   });
 });
 
@@ -38,6 +52,15 @@ $(window).load(function() {
 });
 
 
+$(window).resize(function() {
+  $('.slider').slick('resize');
+});
+
+$(window).on('orientationchange', function() {
+  $('.slider').slick('resize');
+});
+
+
 var elem = document.getElementByClassName("slider")[0];
 if (elem.requestFullscreen) {
   elem.requestFullscreen();
@@ -48,3 +71,16 @@ if (elem.requestFullscreen) {
 } else if (elem.webkitRequestFullscreen) {
   elem.webkitRequestFullscreen();
 }
+
+
+
+var debounceTimeout;
+$(window).on("resize", function(){
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(function(){
+        $(".ps-current img:visible").css("max-height","99.9%");
+        setTimeout(function(){
+            $(".ps-current img:visible").removeAttr("style");
+        }, 10);
+    }, 300);
+});

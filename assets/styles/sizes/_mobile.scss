@@ -111,16 +111,25 @@
 	overflow: hidden!important;
 	border-box: content-box;
 }
+.main {
+	.slider {
+		padding-left: 0;
+		padding-right: 0;
+		img {
+		    width: 100%;
+		    height: auto;
+		}
+	}
+}
+
 .slide-track {
 	overflow: hidden!important;
 }
 /* Image thumbnail*/
 .thumbnail {
 	border: 0;
-	padding: 0;
-	margin-left: 10%;
-	margin-right: 10%;
+	padding: 2em;
 	img {
-		margin: 0;
+		width: 100%;
 	}
 }

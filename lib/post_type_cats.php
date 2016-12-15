@@ -42,7 +42,7 @@ function post_type_cat_init(){
         'rewrite'            => array( 'slug' => 'katter' ),
         'capability_type'    => 'page',
         'has_archive'        => true,
-        'hierarchical'       => false,
+        'hierarchical'       => true,
         'menu_position'      => null,
         'menu_icon'			 => 'dashicons-heart',
         'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats')

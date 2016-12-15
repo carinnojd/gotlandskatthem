@@ -33,6 +33,7 @@ function setup() {
   add_theme_support('post-thumbnails');
   add_image_size('small-thumbnail', 200, 200, true);
   add_image_size('banner-image', 310, 210, array('left', 'center'));
+  add_image_size('slider-image', 2048, 800, array('center', 'center'));
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
@@ -84,6 +85,8 @@ function display_sidebar() {
     is_404(),
     is_front_page(),
     is_page_template('template-custom.php'),
+    is_single(),
+    is_post_type_archive('cat')
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

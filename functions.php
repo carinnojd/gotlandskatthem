@@ -56,7 +56,7 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 add_filter( 'login_redirect', 'my_login_redirect', 10, 3 );
 
 
-
+/*
 // Login from front end
 function my_login_form( $args = array() ) {
   $defaults = array(
@@ -109,6 +109,7 @@ function my_dropdown_users() {
 }
 
 my_login_form (array( 'redirect' => admin_url() ) );
+*/
 
 
 
