@@ -1,38 +1,38 @@
+
 .navbar {
 	padding-bottom: 0;
 }
+
 .navbar-default {
 	background-color: transparentize(white, 0.5);
 	border: 0;
 	border-bottom: 2px solid $brand-primary;
-	a {
-				color: $black;
-			}
-			a:focus, a:hover, a:active {
-				color: $black;
-			}
-			a:focus {
-				color: $black;
-			}
-	.nav {
-		li {
-			a {
+	margin-top: -30px;
 
-			}
-		}
+	.logo {
+		top: 2em;
 	}
+
+	a, a:focus, a:hover, a:active, a:focus {
+		color: $black;
+	}
+
 	.navbar-nav {
 		background-color: transparentize(white, 0.5);
+
 		li {
 			border-top: none;
+
 			a, a:focus, a:hover, a:active {
 				color: $black;
 				padding: 1.4em 0.7em;
 			}
+
 			a:hover {
 				background-color: $brand-primary;
 			}
 		}
+
 		.open {
 			a, a:focus, a:hover, a:active {
 				color: $black;
@@ -40,20 +40,37 @@
 				
 			}
 		}
+
 		.active {
 			a, a:focus, a:hover, a:active {
 				color: $black;
 				background-color: $brand-primary;
 			}
 		}
+
 		.dropdown-menu {
-			a, a:focus, a:hover, a:active {
-				padding: 0.4em;
+			li {
+				a, a:focus, a:hover, a:active {
+					padding: 0.4em;
+					padding-left: 1em;
+				}
 			}
+			
 			a:focus, a:hover, a:active {
 				background-color: transparentize(white, 0.5);
+			}
+		}
 
+		.dropdown:hover {
+			.dropdown-menu {
+			    display: block!important;
 			}
 		}
 	}
+}
+
+// Center column
+.col-centered {
+    float: none;
+    margin: 0 auto;
 }

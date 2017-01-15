@@ -4,13 +4,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: 404.php:4
-msgid "Sorry, but the page you were trying to view does not exist."
+msgid "Ledsen, men sidan du sökte finns inte."
 msgstr ""
 
 #: base.php:14
 msgid ""
-"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
-"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+"Du använder en <strong>gammal</strong> webbläsarversion. Vänligen <a href=\"http://"
+"browsehappy.com/\">uppdatera din webbläsare</a> för att bättra din upplevelse."
 msgstr ""
 
 #: functions.php:22
@@ -18,11 +18,11 @@ msgid "Error locating %s for inclusion"
 msgstr ""
 
 #: index.php:5 search.php:5
-msgid "Sorry, no results were found."
+msgid "Ledsen, inget resultat kunde hittas."
 msgstr ""
 
 #: lib/extras.php:31
-msgid "Continued"
+msgid "Fortsättning"
 msgstr ""
 
 #: lib/setup.php:30
@@ -38,15 +38,15 @@ msgid "Footer"
 msgstr ""
 
 #: lib/titles.php:13
-msgid "Latest Posts"
+msgid "Senaste inläggen"
 msgstr ""
 
 #: lib/titles.php:18
-msgid "Search Results for %s"
+msgid "Sökresultat för %s"
 msgstr ""
 
 #: lib/titles.php:20
-msgid "Not Found"
+msgid "Ingen sida funnen"
 msgstr ""
 
 #: templates/comments.php:9

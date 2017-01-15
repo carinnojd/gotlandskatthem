@@ -4,6 +4,15 @@ $icon-font-path:        "../fonts/";
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint: 1024px;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+// Small screen / tablet
+
+//** For `$screen-sm-min` and up.
+$container-sm:                 750px !default;
 
 // Colors
 $brand-primary:         	#F49826;
@@ -14,3 +23,4 @@ $dropdown-link-active-bg:	transparentize(white, 0.5);
 $dropdown-link-active-color:black;
 $dropdown-bg:				#F49826;
 $nav-link-hover-bg: 		#000;
+$navbar-margin-bottom:		3em;

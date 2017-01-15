@@ -1,7 +1,7 @@
 <?php
 
-/* cats page */
-function post_type_cat_init(){
+/* Cats page */
+function post_type_cats_init(){
 	$labels = array(
         'name'                  => "Katter",
         'singular_name'         => "katt",
@@ -21,7 +21,7 @@ function post_type_cat_init(){
         'set_featured_image'    => _x( 'Välj omslagsbild', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
         'remove_featured_image' => _x( 'Ta bort omslagsbild', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
         'use_featured_image'    => _x( 'Använd som omslagsbild', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-        'archives'              => _x( 'Katter', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+        'archives'              => _x( 'Våra katter', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
         'insert_into_item'      => 'Placera katt',
         'uploaded_to_this_item' => _x( 'Ladda upp denna katt', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
         'filter_items_list'     => _x( 'Filtrera kattlista', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
@@ -42,20 +42,20 @@ function post_type_cat_init(){
         'rewrite'            => array( 'slug' => 'katter' ),
         'capability_type'    => 'page',
         'has_archive'        => true,
-        'hierarchical'       => true,
+        'hierarchical'       => false,
         'menu_position'      => null,
         'menu_icon'			 => 'dashicons-heart',
-        'supports'           => array( 'title', 'editor', 'thumbnail', 'post-formats')
+        'supports'           => array( 'title', 'editor', 'post-formats')
     );
-	register_post_type('cat', $args);
+	register_post_type('cats', $args);
 	
 }
-add_action('init', 'post_type_cat_init');
+add_action('init', 'post_type_cats_init');
 
 
 // Meta box for Cat's slogan
 function cat_add_meta_box() {
-    add_meta_box('slogan_cat', 'Slogan för katt', 'cats_slogan_cat_callback', 'cat', 'normal', 'high');
+    add_meta_box('slogan_cat', 'Slogan för katt', 'cats_slogan_cat_callback', 'cats', 'normal', 'high');
 }
 
 function cats_slogan_cat_callback($post) {
@@ -69,7 +69,7 @@ function cats_slogan_cat_callback($post) {
 
 add_action( 'add_meta_boxes', 'cat_add_meta_box');
 
-
+// Save cat's slogan
 function cat_save_slogan_data($post_id) {
 
     // Check if meta box is empty
@@ -107,7 +107,7 @@ add_action('save_post', 'cat_save_slogan_data');
 
 // Meta box for Cat's gender
 function cat_gender_add_meta_box() {
-    add_meta_box('gender_cat', 'Kön', 'cats_gender_cat_callback', 'cat', 'normal', 'high');
+    add_meta_box('gender_cat', 'Kön', 'cats_gender_cat_callback', 'cats', 'normal', 'high');
 }
 
 function cats_gender_cat_callback($post) {
@@ -124,7 +124,7 @@ function cats_gender_cat_callback($post) {
 
 add_action( 'add_meta_boxes', 'cat_gender_add_meta_box');
 
-
+// Save cat'g gender
 function cat_save_gender_data($post_id) {
 
     // Check if meta box is empty
@@ -155,7 +155,17 @@ function cat_save_gender_data($post_id) {
 
 add_action('save_post', 'cat_save_gender_data');
 
-
-
+// Change the placeholder text in title field
+function wpb_change_title_text( $title ){
+     $screen = get_current_screen();
+ 
+     if  ( 'cats' == $screen->post_type ) {
+          $title = 'Fyll i kattens namn';
+     }
+ 
+     return $title;
+}
+ 
+add_filter( 'enter_title_here', 'wpb_change_title_text' );
 
 

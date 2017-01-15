@@ -13,3 +13,50 @@
   @extend .btn;
   @extend .btn-default;
 }
+
+// Logbook form
+fieldset {
+	input {
+	    width: 100%!important;
+	    box-sizing: border-box;
+	    border: 1px solid $brand-primary;
+	    border-radius: 5px;
+	    padding: 5px 15px;
+
+	    &:focus {
+	    	border: 2px solid $brand-primary;
+	    }
+	}
+
+	textarea {
+	    width: 100%;
+	    height: 150px;
+	    padding: 10px 15px;
+	    box-sizing: border-box;
+	    border: 1px solid $brand-primary;
+	    border-radius: 5px;
+	    resize: none;
+
+	    &:focus {
+	    	border: 2px solid $brand-primary;
+	    }
+	}
+	select {
+	    width: 100%;
+	    padding: 10px 12px;
+	    border: 1px solid $brand-primary;
+	    border-radius: 5px;
+	    padding: 5px 15px;
+	}
+	button {
+		width: 100%;
+	    background-color: $brand-primary;
+	    border: none;
+	    border-radius: 5px;
+	    color: white;
+	    padding: 10px 15px;
+	    text-decoration: none;
+	    margin: 5px 0px;
+	    cursor: pointer;
+	}
+}

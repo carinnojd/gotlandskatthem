@@ -1,0 +1,21 @@
+.footer-content {
+	background-color: $brand-primary;
+	padding-right: 1em;
+	padding-bottom: 2em;
+	margin-top: 2em;
+	.widget-column {
+		padding-left: 5em;
+	}
+	ul {
+		padding-left: 0;
+
+		li {
+			list-style: none;
+
+			a {
+				color: black!important;
+				text-decoration: none;
+			}
+		}
+	}
+} 
